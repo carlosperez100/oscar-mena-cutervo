@@ -49,13 +49,23 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .tabs{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap}
 .tabs button{cursor:pointer}
 .tabs button.on{background:var(--teal);color:#fff;border-color:var(--teal)}
-.scroll{max-height:420px;overflow:auto;border:1px solid #e6eaf0;border-radius:8px}
+.scroll{max-height:70vh;overflow:auto;border:1px solid #e6eaf0;border-radius:8px}
+.tabwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.dcard{border:1px solid #e3e9f1;border-radius:12px;padding:10px 12px;margin:8px 4px;background:#fff;box-shadow:0 1px 6px rgba(10,46,92,.06);cursor:pointer}
+.dcard .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.dcard .top b{color:var(--azul);font-size:1rem}
+.dcard .top small{color:var(--muted)}
+.dcard .brk{display:inline-block;min-width:44px;text-align:center;border-radius:8px;padding:2px 8px;font-weight:800;color:#fff;background:var(--azul2)}
+.dcard .chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.dcard .chips span.lbl{font-size:.72rem;color:var(--muted);align-self:center}
+.dcard .dem{font-size:.78rem;color:var(--muted);margin-top:6px;line-height:1.35}
 footer{padding:14px 18px;font-size:.75rem;color:var(--muted);max-width:1500px;margin:0 auto;line-height:1.5}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px}
 .kpi{background:linear-gradient(180deg,#fff,#f3f6fa);border:1px solid #e3e9f1;border-radius:10px;padding:8px 10px}
 .kpi b{display:block;font-size:1.25rem;color:var(--azul)}
 .kpi small{color:var(--muted)}
 .src{font-size:.72rem;color:var(--muted);margin-top:6px}
+@media(max-width:640px){header{padding:8px 12px;gap:6px}header h1{font-size:.98rem}header .sub{display:none}.kpis{grid-template-columns:repeat(2,1fr)}.kpi b{font-size:1.15rem}}
 @media print{header a,.controls,.tabs{display:none}.wrap{display:block}.card{box-shadow:none;page-break-inside:avoid}}
 </style>
 </head>
@@ -191,12 +201,18 @@ function ficha(d){ const el=document.getElementById('pFicha');
   <h3>Locales de votación del distrito</h3>${LOC.filter(l=>l.ubigeo===d.ubigeo).sort((a,b)=>b.electores_2026-a.electores_2026).map(l=>`<div style="font-size:.8rem;display:flex;justify-content:space-between;border-bottom:1px dashed #eee"><span>${l.local_votacion}${l.centro_poblado_iiee?' <small style="color:var(--muted)">('+l.centro_poblado_iiee+')</small>':''}</span><b>${fmt(l.electores_2026)} · ${l.participacion_2v2026}%</b></div>`).join('')}
   <div class="src">Fuentes: INEI Censos 2017/2025 y Mapa de Pobreza 2018; ONPE EG2026; SUSALUD RENIPRESS 2026; CEPLAN-PCM (SIEN, ESCALE, MEF, MININTER, RENAMU, SUNAT). Percentiles GEMSES calculados entre los 15 distritos.</div>`; }
 function rank(){ const el=document.getElementById('pRank'); const s=[...DIST].sort((a,b)=>(cur.worse? (b[cur.k]??-1e9)-(a[cur.k]??-1e9) : (b[cur.k]??-1e9)-(a[cur.k]??-1e9))); const mx=Math.max(...DIST.map(d=>Math.abs(d[cur.k]||0)));
-  el.innerHTML=`<table><thead><tr><th>#</th><th>Distrito</th><th class="num">${cur.l}</th><th></th><th class="num">Electores</th></tr></thead><tbody>`+s.map((d,i)=>`<tr onclick="selectD('${d.ubigeo}')" style="cursor:pointer"><td>${i+1}</td><td>${d.distrito}</td><td class="num"><b>${fmt(d[cur.k],cur.u)}</b></td><td><span class="bar" style="width:${Math.max(2,100*Math.abs(d[cur.k]||0)/mx)}px;background:${cur.worse?'var(--rojo)':'var(--azul2)'}"></span></td><td class="num">${fmt(d.electores_2026)}</td></tr>`).join('')+'</tbody></table>'; }
+  el.innerHTML=`<div class=\"tabwrap\"><table><thead><tr><th>#</th><th>Distrito</th><th class="num">${cur.l}</th><th></th><th class="num">Electores</th></tr></thead><tbody>`+s.map((d,i)=>`<tr onclick="selectD('${d.ubigeo}')" style="cursor:pointer"><td>${i+1}</td><td>${d.distrito}</td><td class="num"><b>${fmt(d[cur.k],cur.u)}</b></td><td><span class="bar" style="width:${Math.max(2,100*Math.abs(d[cur.k]||0)/mx)}px;background:${cur.worse?'var(--rojo)':'var(--azul2)'}"></span></td><td class="num">${fmt(d.electores_2026)}</td></tr>`).join('')+'</tbody></table></div>'; }
 function locTable(){ const q=(document.getElementById('fLoc').value||'').toLowerCase(); const rows=LOC.filter(l=>!q||(l.local_votacion+' '+l.distrito+' '+l.centro_poblado_iiee).toLowerCase().includes(q)).sort((a,b)=>b.electores_2026-a.electores_2026);
-  document.getElementById('tLocales').innerHTML=`<table><thead><tr><th>Local de votación</th><th>Distrito</th><th>Centro poblado (IIEE)</th><th class="num">Mesas</th><th class="num">Electores</th><th class="num">% prov.</th><th class="num">Partic. 2V</th></tr></thead><tbody>`+rows.map(l=>`<tr><td>${l.local_votacion}</td><td>${l.distrito}</td><td>${l.centro_poblado_iiee||'—'}</td><td class="num">${l.mesas}</td><td class="num"><b>${fmt(l.electores_2026)}</b></td><td class="num">${l.pct_electores_provincia}%</td><td class="num">${l.participacion_2v2026}%</td></tr>`).join('')+'</tbody></table>'; }
+  document.getElementById('tLocales').innerHTML=`<div class=\"tabwrap\"><table><thead><tr><th>Local de votación</th><th>Distrito</th><th>Centro poblado (IIEE)</th><th class="num">Mesas</th><th class="num">Electores</th><th class="num">% prov.</th><th class="num">Partic. 2V</th></tr></thead><tbody>`+rows.map(l=>`<tr><td>${l.local_votacion}</td><td>${l.distrito}</td><td>${l.centro_poblado_iiee||'—'}</td><td class="num">${l.mesas}</td><td class="num"><b>${fmt(l.electores_2026)}</b></td><td class="num">${l.pct_electores_provincia}%</td><td class="num">${l.participacion_2v2026}%</td></tr>`).join('')+'</tbody></table></div>'; }
 function demTable(){ const s=[...DIST].sort((a,b)=>b.indice_brecha_gemses-a.indice_brecha_gemses);
-  document.getElementById('pDem').innerHTML=`<p style="font-size:.8rem;margin:4px 0">Priorización GEMSES: percentil de cada distrito (entre 15) en 9 brechas oficiales; P≥75 = <span class="chip CRÍTICO">CRÍTICO</span>, P50–74 = <span class="chip ALTO">ALTO</span>, P25–49 = <span class="chip MEDIO">MEDIO</span>, &lt;P25 = <span class="chip BAJO">BAJO</span>. El peso electoral ordena dónde invertir la campaña.</p><table><thead><tr><th>Distrito</th><th class="num">Electores</th><th>Peso</th><th class="num">Brecha</th><th>Pobreza</th><th>Agua</th><th>Desagüe</th><th>Luz</th><th>DCI</th><th>Médicos</th><th>Escuelas</th><th>Internet</th><th>Demandas prioritarias → mensaje</th></tr></thead><tbody>`+
-  s.map(d=>`<tr onclick="selectD('${d.ubigeo}')" style="cursor:pointer"><td><b>${d.distrito}</b></td><td class="num">${fmt(d.electores_2026)}</td><td>${chip(d.peso_electoral)}</td><td class="num"><b>${d.indice_brecha_gemses}</b></td><td>${chip(d.niv_pobreza_2018_punto)}</td><td>${chip(d.niv_pct_sin_agua_red_2017)}</td><td>${chip(d.niv_pct_sin_desague_red_2017)}</td><td>${chip(d.niv_pct_sin_luz_2017)}</td><td>${chip(d.niv_dci_pct_2021)}</td><td>${chip(d.niv_medicos_x10k_2026)}</td><td>${chip(d.niv_locales_esc_buen_estado_pct_2018)}</td><td>${chip(d.niv_pct_internet_hogar_2017)}</td><td style="font-size:.75rem">${d.demandas_prioritarias}</td></tr>`).join('')+'</tbody></table>'; }
+  const chip2=(lbl,n)=> n?`<span class="chip ${n}" title="${lbl}">${lbl}</span>`:'';
+  document.getElementById('pDem').innerHTML=`<p style="font-size:.78rem;margin:4px 6px">Priorización GEMSES: percentil de cada distrito (entre 15) en 9 brechas oficiales; P≥75 = <span class="chip CRÍTICO">CRÍTICO</span>, P50–74 = <span class="chip ALTO">ALTO</span>, P25–49 = <span class="chip MEDIO">MEDIO</span>, &lt;P25 = <span class="chip BAJO">BAJO</span>. Ordenados por brecha total; toque un distrito para ver su ficha.</p>`+
+  s.map(d=>`<div class="dcard" onclick="selectD('${d.ubigeo}')">
+    <div class="top"><b>${d.distrito}</b><span><small>${fmt(d.electores_2026)} electores (${d.pct_electores_provincia}%)</small> ${chip(d.peso_electoral)} <span class="brk" title="Índice de brecha GEMSES 0–100">${d.indice_brecha_gemses}</span></span></div>
+    <div class="chips"><span class="lbl">Brechas:</span>${chip2('Pobreza',d.niv_pobreza_2018_punto)}${chip2('Agua',d.niv_pct_sin_agua_red_2017)}${chip2('Desagüe',d.niv_pct_sin_desague_red_2017)}${chip2('Luz',d.niv_pct_sin_luz_2017)}${chip2('DCI',d.niv_dci_pct_2021)}${chip2('Médicos',d.niv_medicos_x10k_2026)}${chip2('Escuelas',d.niv_locales_esc_buen_estado_pct_2018)}${chip2('Internet',d.niv_pct_internet_hogar_2017)}${chip2('Dispersión',d.niv_pct_ccpp_menos100)}</div>
+    <div class="dem">📌 ${d.demandas_prioritarias}</div>
+  </div>`).join('');
+}
 function showTab(t){ document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t===t)); ['Ficha','Rank','Loc','Dem'].forEach(x=>document.getElementById('p'+x).style.display=(x.toLowerCase()===t?'block':'none')); }
 document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.t)));
 // selector
