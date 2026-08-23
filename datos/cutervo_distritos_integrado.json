@@ -127,7 +127,16 @@
   "indice_brecha_gemses": 26.0,
   "demandas_prioritarias": "Desnutrición crónica <5 (2021) (P97) | Locales escolares en buen estado (2018) (P37) | Sin agua por red (2017) (P33)",
   "peso_electoral": "ALTO",
-  "ranking_brecha_provincial": 14
+  "ranking_brecha_provincial": 14,
+  "validos_erm2022": 26641,
+  "votos_ap2022": 7814,
+  "pct_ap2022": 29.3,
+  "votos_app2022": 9118,
+  "pct_app2022": 34.2,
+  "votos_csv2022": 4535,
+  "pct_csv2022": 17.0,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060607",
@@ -257,7 +266,16 @@
   "indice_brecha_gemses": 60.0,
   "demandas_prioritarias": "Sin desagüe por red (2017) (P80) | Sin agua por red (2017) (P70) | Pobreza monetaria 2018 (P70)",
   "peso_electoral": "ALTO",
-  "ranking_brecha_provincial": 5
+  "ranking_brecha_provincial": 5,
+  "validos_erm2022": 6216,
+  "votos_ap2022": 495,
+  "pct_ap2022": 8.0,
+  "votos_app2022": 2119,
+  "pct_app2022": 34.1,
+  "votos_csv2022": 3330,
+  "pct_csv2022": 53.6,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060602",
@@ -387,7 +405,16 @@
   "indice_brecha_gemses": 71.0,
   "demandas_prioritarias": "Sin electricidad (2017) (P97) | Sin desagüe por red (2017) (P90) | Sin agua por red (2017) (P90)",
   "peso_electoral": "ALTO",
-  "ranking_brecha_provincial": 2
+  "ranking_brecha_provincial": 2,
+  "validos_erm2022": 4651,
+  "votos_ap2022": 2695,
+  "pct_ap2022": 57.9,
+  "votos_app2022": 1600,
+  "pct_app2022": 34.4,
+  "votos_csv2022": 330,
+  "pct_csv2022": 7.1,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060614",
@@ -517,7 +544,16 @@
   "indice_brecha_gemses": 37.0,
   "demandas_prioritarias": "Médicos por 10 000 hab (2026) (P73) | Sin agua por red (2017) (P57) | Desnutrición crónica <5 (2021) (P57)",
   "peso_electoral": "ALTO",
-  "ranking_brecha_provincial": 12
+  "ranking_brecha_provincial": 12,
+  "validos_erm2022": 5511,
+  "votos_ap2022": 1330,
+  "pct_ap2022": 24.1,
+  "votos_app2022": 1754,
+  "pct_app2022": 31.8,
+  "votos_csv2022": 2030,
+  "pct_csv2022": 36.8,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060613",
@@ -647,7 +683,16 @@
   "indice_brecha_gemses": 52.0,
   "demandas_prioritarias": "Médicos por 10 000 hab (2026) (P90) | Pobreza monetaria 2018 (P77) | Desnutrición crónica <5 (2021) (P77)",
   "peso_electoral": "MEDIO",
-  "ranking_brecha_provincial": 8
+  "ranking_brecha_provincial": 8,
+  "validos_erm2022": 4182,
+  "votos_ap2022": 1090,
+  "pct_ap2022": 26.1,
+  "votos_app2022": 1368,
+  "pct_app2022": 32.7,
+  "votos_csv2022": 668,
+  "pct_csv2022": 16.0,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060606",
@@ -777,7 +822,16 @@
   "indice_brecha_gemses": 49.0,
   "demandas_prioritarias": "Médicos por 10 000 hab (2026) (P73) | Sin agua por red (2017) (P63) | Hogares con internet (2017) (P60)",
   "peso_electoral": "MEDIO",
-  "ranking_brecha_provincial": 10
+  "ranking_brecha_provincial": 10,
+  "validos_erm2022": 3114,
+  "votos_ap2022": 1034,
+  "pct_ap2022": 33.2,
+  "votos_app2022": 850,
+  "pct_app2022": 27.3,
+  "votos_csv2022": 77,
+  "pct_csv2022": 2.5,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060612",
@@ -907,7 +961,16 @@
   "indice_brecha_gemses": 52.0,
   "demandas_prioritarias": "Sin agua por red (2017) (P97) | Médicos por 10 000 hab (2026) (P83) | Sin desagüe por red (2017) (P70)",
   "peso_electoral": "MEDIO",
-  "ranking_brecha_provincial": 7
+  "ranking_brecha_provincial": 7,
+  "validos_erm2022": 3195,
+  "votos_ap2022": 1344,
+  "pct_ap2022": 42.1,
+  "votos_app2022": 705,
+  "pct_app2022": 22.1,
+  "votos_csv2022": 744,
+  "pct_csv2022": 23.3,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060608",
@@ -1037,7 +1100,16 @@
   "indice_brecha_gemses": 34.0,
   "demandas_prioritarias": "Hogares con internet (2017) (P60) | Médicos por 10 000 hab (2026) (P57) | Desnutrición crónica <5 (2021) (P50)",
   "peso_electoral": "MEDIO",
-  "ranking_brecha_provincial": 13
+  "ranking_brecha_provincial": 13,
+  "validos_erm2022": 2015,
+  "votos_ap2022": 238,
+  "pct_ap2022": 11.8,
+  "votos_app2022": 1095,
+  "pct_app2022": 54.3,
+  "votos_csv2022": 315,
+  "pct_csv2022": 15.6,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060605",
@@ -1167,7 +1239,16 @@
   "indice_brecha_gemses": 60.0,
   "demandas_prioritarias": "Sin agua por red (2017) (P83) | Pobreza monetaria 2018 (P83) | Sin desagüe por red (2017) (P80)",
   "peso_electoral": "MEDIO",
-  "ranking_brecha_provincial": 4
+  "ranking_brecha_provincial": 4,
+  "validos_erm2022": 1960,
+  "votos_ap2022": 75,
+  "pct_ap2022": 3.8,
+  "votos_app2022": 749,
+  "pct_app2022": 38.2,
+  "votos_csv2022": 1055,
+  "pct_csv2022": 53.8,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060603",
@@ -1297,7 +1378,16 @@
   "indice_brecha_gemses": 44.0,
   "demandas_prioritarias": "Hogares con internet (2017) (P90) | Dispersión: % CCPP < 100 hab (P80) | Sin electricidad (2017) (P77)",
   "peso_electoral": "MEDIO",
-  "ranking_brecha_provincial": 11
+  "ranking_brecha_provincial": 11,
+  "validos_erm2022": 1855,
+  "votos_ap2022": 429,
+  "pct_ap2022": 23.1,
+  "votos_app2022": 691,
+  "pct_app2022": 37.3,
+  "votos_csv2022": 527,
+  "pct_csv2022": 28.4,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060611",
@@ -1427,7 +1517,16 @@
   "indice_brecha_gemses": 72.0,
   "demandas_prioritarias": "Sin desagüe por red (2017) (P97) | Médicos por 10 000 hab (2026) (P97) | Sin electricidad (2017) (P90)",
   "peso_electoral": "BAJO",
-  "ranking_brecha_provincial": 1
+  "ranking_brecha_provincial": 1,
+  "validos_erm2022": 1962,
+  "votos_ap2022": 136,
+  "pct_ap2022": 6.9,
+  "votos_app2022": 898,
+  "pct_app2022": 45.8,
+  "votos_csv2022": 435,
+  "pct_csv2022": 22.2,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060610",
@@ -1556,7 +1655,16 @@
   "indice_brecha_gemses": 51.0,
   "demandas_prioritarias": "Locales escolares en buen estado (2018) (P97) | Sin electricidad (2017) (P83) | Hogares con internet (2017) (P77)",
   "peso_electoral": "BAJO",
-  "ranking_brecha_provincial": 9
+  "ranking_brecha_provincial": 9,
+  "validos_erm2022": 1928,
+  "votos_ap2022": 47,
+  "pct_ap2022": 2.4,
+  "votos_app2022": 245,
+  "pct_app2022": 12.7,
+  "votos_csv2022": 896,
+  "pct_csv2022": 46.5,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060604",
@@ -1685,7 +1793,16 @@
   "indice_brecha_gemses": 59.0,
   "demandas_prioritarias": "Pobreza monetaria 2018 (P97) | Hogares con internet (2017) (P90) | Desnutrición crónica <5 (2021) (P90)",
   "peso_electoral": "BAJO",
-  "ranking_brecha_provincial": 6
+  "ranking_brecha_provincial": 6,
+  "validos_erm2022": 1537,
+  "votos_ap2022": 275,
+  "pct_ap2022": 17.9,
+  "votos_app2022": 535,
+  "pct_app2022": 34.8,
+  "votos_csv2022": 707,
+  "pct_csv2022": 46.0,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060609",
@@ -1815,7 +1932,16 @@
   "indice_brecha_gemses": 63.0,
   "demandas_prioritarias": "Hogares con internet (2017) (P90) | Locales escolares en buen estado (2018) (P83) | Desnutrición crónica <5 (2021) (P83)",
   "peso_electoral": "BAJO",
-  "ranking_brecha_provincial": 3
+  "ranking_brecha_provincial": 3,
+  "validos_erm2022": 1264,
+  "votos_ap2022": 410,
+  "pct_ap2022": 32.4,
+  "votos_app2022": 209,
+  "pct_app2022": 16.5,
+  "votos_csv2022": 262,
+  "pct_csv2022": 20.7,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  },
  {
   "ubigeo": "060615",
@@ -1945,6 +2071,15 @@
   "indice_brecha_gemses": 20.0,
   "demandas_prioritarias": "Dispersión: % CCPP < 100 hab (P97) | Médicos por 10 000 hab (2026) (P43) | Desnutrición crónica <5 (2021) (P17)",
   "peso_electoral": "BAJO",
-  "ranking_brecha_provincial": 15
+  "ranking_brecha_provincial": 15,
+  "validos_erm2022": 835,
+  "votos_ap2022": 18,
+  "pct_ap2022": 2.2,
+  "votos_app2022": 336,
+  "pct_app2022": 40.2,
+  "votos_csv2022": 203,
+  "pct_csv2022": 24.3,
+  "votos_sp2022": 0,
+  "pct_sp2022": 0.0
  }
 ]
